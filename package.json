@@ -1,0 +1,19 @@
+{
+  "author": "Mark Jen",
+  "name": "square-connect",
+  "description": "SDK for Square Connect API",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/markjen/square-connect-node-sdk.git"
+  },
+  "license": {
+    "type": "Apache-2.0",
+    "url": "http://github.com/markjen/square-connect-node-sdk/raw/master/LICENSE"
+  },
+  "main": "square-connect.js",
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
