@@ -17,7 +17,7 @@ square.accessToken = 'UPDATED_ACCESS_TOKEN';
 
 // two squares at the same time! and with a custom logger
 var customLogger = require('intel').getLogger('myapp');
-var square2 = new SquareConnect('ANOTHER_ACCESS_TOKEN', customLogger);
+var square2 = new SquareConnect({accessToken:'ANOTHER_ACCESS_TOKEN', logger: customLogger});
 
 // hit an API
 square.api('me', function(err, res) {

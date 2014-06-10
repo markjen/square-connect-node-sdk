@@ -20,10 +20,14 @@ var https = require('https'),
     SQUARE_CONNECT_HOST = 'connect.squareup.com',
     SQUARE_CONNECT_VERSION = 'v1';
 
-Square = function(accessToken, logger) {
-  this.accessToken = accessToken;
-  this.logger = logger || console;
-};
+function Square(options) {
+  if (typeof options === "string") {
+    options = { accessToken: options };
+  }
+
+  this.accessToken = options.accessToken;
+  this.logger = options.logger || console;
+}
 
 Square.prototype.api = function() {
   var logger = this.logger,
@@ -79,12 +83,12 @@ Square.prototype.api = function() {
         res.on('error', function(e) {
           handleError(e, cb, logger);
         });
-        
+
         var chunks = [];
         res.on('data', function(d) {
           chunks.push(d);
         });
-        
+
         res.on('end', function() {
           cb(undefined, {
             statusCode: res.statusCode,
