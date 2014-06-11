@@ -21,6 +21,10 @@ var https = require('https'),
     SQUARE_CONNECT_VERSION = 'v1';
 
 function Square(options) {
+  if (!(this instanceof Square)) {
+    throw new Error("You must use the new keyword when constructing an instance of SquareConnect.");
+  }
+
   if (typeof options === "string") {
     options = { accessToken: options };
   }
